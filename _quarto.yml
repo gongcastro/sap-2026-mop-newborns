@@ -1,0 +1,16 @@
+title: Using the Maximal Onset Principle to detect syllables at birth
+subtitle: An fNIRS study
+institute: SAP Seminar - 2026/02/17
+
+format:
+  revealjs: 
+    scrollable: true
+    slide-number: true
+    progress: true
+  
+css: style.scss
+bibliography: bibliography.bib
+
+echo: false
+warning: false
+error: false

@@ -1,0 +1,349 @@
+```{python}
+# | label: setup
+from pathlib import Path
+
+import IPython.display as ipd
+import polars as pl
+
+ppt = pl.read_csv(Path("data/participants.tsv"), separator="\t")
+```
+
+
+## Continuous speech is hierarchically organised into discrete units
+
+![](img/multilevel.jpg)^[@meyer2018neural]
+
+## Newborns can detect syllables in continuous speech
+
+Newborns (and infants, adults) preferentially chunk the speech signal into [syllable-sized units]{style="background-color: #e3e1e1;"}^[e.g., @bijeljac19934; @flo2022sleeping; @luo2007phase; @jusczyk1987representation; @bertoncini1988investigation]
+
+## Syllabic structure
+
+<br>
+
+|Structure |Onset  |Nucleus  |Coda  |
+|----------|:-----:|:-------:|:----:|
+| V        |       |a        |      |
+| CV       | t     |a        |      |
+| CVC      | t     |a        |n     |
+| VC       |       |a        |n     |
+
+
+## Language-specific constraints to syllabic structure
+
+| Structure | Japanese     | Spanish          | English         |
+|-----------|--------------|------------------|-----------------|
+|V          | [u]{style="background-color: #e3e1e1;"}.mi     | [o]{style="background-color: #e3e1e1;"}.jo         | [a]{style="background-color: #e3e1e1;"}.ny        |
+|CV         | [ya]{style="background-color: #e3e1e1;"}.ma.ha | [ca]{style="background-color: #e3e1e1;"}.sa        | [fai]{style="background-color: #e3e1e1;"}.ry      | 
+|CVC        | [hon]{style="background-color: #e3e1e1;"}.da   | [rin]{style="background-color: #e3e1e1;"}.cón      | [con]{style="background-color: #e3e1e1;"}.trol    |
+|CCVC       |              | [fres]{style="background-color: #e3e1e1;"}.co      | [fresh]{style="background-color: #e3e1e1;"}       |
+|CCVCC      |              | [trans]{style="background-color: #e3e1e1;"}.por.te | [shrink]{style="background-color: #e3e1e1;"}     |
+|CCCVCCC    |              |                  | [strengths]{style="background-color: #e3e1e1;"}   |
+
+
+## Maximal Onset Principle (MOP)
+
+Linguistic universal
+: Consonants are preferably grouped at syllabic onset
+
+<br>
+
+* MOP following [MOP+]{style="background-color: #5778a4; color: white"}: CV.CCV - /mo.pla/
+* MOP violating [MOP-]{style="background-color: #e49444; color: white"}: CVC.CV - /mop.la/
+
+::: box
+Is MOP a mechanism for detecting syllables at birth?
+:::
+
+
+## The present study
+
+Functional near-infrared light spoctroscopy (**fNIRS**):
+
+- Relative changes in concentration of oxy-hemoglobin ([$\Delta$HbO]{style="background-color: #E15759; color: white"}) and deoxy-hemoglobin ([$\Delta$HbR]{style="background-color: #4E79A7; color: white"}) across time (haemodynamic response)
+- Indirect measure of neural activity, mostly in the cortex
+
+::: columns
+:::: column
+![](img/bold.png)
+::::
+:::: column
+![](img/bold-block.gif)
+::::
+:::
+
+
+## Are newborns sensitive to (violations of) the MOP?
+
+::: box
+**Hypothesis 1**
+: If newborns are sensitive to violations of the MOP, the haemodynamic responses to MOP+ and MOP- words should differ.
+:::
+
+<br>
+
+## Are newborns sensitive to (violations of) the MOP?
+
+::: box
+**Hypothesis 2**
+: If newborns have an innate preference for MOP+ structures, the haemodynamic response to MOP+ words should be *greater* than for MOP- words.
+:::
+
+## Are newborns sensitive to (violations of) the MOP?
+
+Newborns sometimes rely exclusively on 1st syllables^[@flo2022sleeping]
+
+::: box
+**Hypothesis 3**
+: If newborns discriminate between MOP+ and MOP- (Hypothesis 1), they do so by processing the disyllabic structure of the word (not just the first syllable).
+:::
+
+## Stimuli
+
+**CVCCV words**: Onset + Vowel + Consonant cluster (CC) + Vowel
+
+| **List** | **Type** | **Structure** | **Words** |
+|----------|---------------|---------------------|-----------|
+| 1   | [MOP+]{style="background-color: #5778a4; color: white"} | CV-CCV              | mo-pla, sa-klo, ti-ple, de-kli | 
+|          | [MOP-]{style="background-color: #e49444; color: white"}  | CVC-CV              | mop-la, sak-lo, tip-le, dek-li | 
+|          | [MOP- (1st)]{style="background-color: #6a9f58; color: white"} | CVC                 | mop, sak, tip, dek |
+| 2   | [MOP+]{style="background-color: #5778a4; color: white"}         | CV-CCV              | mo-kla, sa-plo, ti-kle, de-pli |
+|          | [MOP-]{style="background-color: #e49444; color: white"}     | CVC-CV              | mok-la, sap-lo, tik-le, dep-li |
+|          | [MOP- (1st)]{style="background-color: #6a9f58; color: white"} | CVC                 | mok, sap, tik, dep             |
+: {tbl-colwidths="[4,25, 13, 50]"}
+
+## Stimuli
+
+* Synthesised using MBROLA  (`it4` voice) (*pymbrola* Python package)
+* 25 ms pause between syllables
+* Flat pitch: 200 Hz
+* Manually removed offset voicing from CVC syllables (Praat)
+
+## Task design
+
+Block design (bigger expected effect size)^[e.g., @abboub2016prosodic; @mahmoudzadeh2013syllabic]
+
+Inspired by Mahmoudzadeh et al. (2013): oddball-like paradigm
+
+Up to 40 min duration
+
+::: columns
+:::: column
+
+::::: box
+Blocks > Trials > Words
+:::::
+
+::::
+:::: column
+
+
+Standard blocks [ST]{style="background-color: #5778a4; color: white"}
+
+Deviant word blocks [DW]{style="background-color: #e49444; color: white"}
+
+Deviant syllable blocks [DS]{style="background-color: #6a9f58; color: white"}
+
+::::
+:::
+
+## Task design
+
+Standard [ST]{style="background-color: #5778a4; color: white"} block: MOP+ (e.g., *mo-pla*)
+
+![](img/st-block.png)
+
+```{python}
+# | label: audio-st-block
+ipd.Audio("sounds/st-block.wav")
+```
+
+## Task design
+
+Deviant word [DW]{style="background-color: #e49444; color: white"} block: MOP- (e.g., *mop-la*)
+
+![](img/dw-block.png)
+
+```{python}
+# | label: audio-dw-block
+ipd.Audio("sounds/st-block.wav")
+```
+
+## Task design
+
+Deviant syllable [DS]{style="background-color: #6a9f58; color: white"} block: MOP- 1st syllable (e.g., *mop*)
+
+![](img/ds-block.png)
+
+```{python}
+# | label: audio-ds-block
+ipd.Audio("sounds/st-block.wav")
+```
+
+## Participants
+
+```{python}
+# | label: participants
+n_ppt = len(ppt)
+```
+
+* `{python} n_ppt` healthy, full term neonates recruited from Hospital Sant Joan de Déu (Barcelona) after delivery.^[Last Apgar score $\geq$ 9, $\geq$ 37 gestation weeks, $\geq$ 2,700g birth weight.]
+* Tested inside hospital room 6-36 hours after delivery
+
+![](img/demo.png)
+
+## Procedure
+
+::: {layout-ncol=2}
+![](img/setup-1.jpg)
+
+![](img/setup-3.jpg)
+:::
+
+
+## fNIRS Montage
+
+From Abboub et al. (2016):
+
+## fNIRS Montage
+
+```{python}
+from main import plot_sensitivity
+
+plot_sensitivity()
+```
+
+![](img/sensitivity.png)
+
+## Data processing
+
+Cedalion^[@middell2026cedalion]:
+
+1) Light intensity to **optical density**
+2) **Channel pruning**: signal quality assessment and automatic motion identification (SCI $\geq$ 80%, amplitude $\leq$ 2.0V)
+3) **Motion arctifact correction**: spline interpolation
+4) Chromophore concentration: **[$\Delta\text{HbO}$]{style="background-color: #E15759; color: white"}** and **[$\Delta\text{HbR}$]{style="background-color: #4E79A7; color: white"}**
+5) Physiological noise attenuation: band-pass **filter** (0.01--1.0 Hz)
+6) **Signal epoching**: -5 to 57.4 seconds (baseline correction)
+7) **Participant rejection** ($\geq$ 2 valid blocks per condition)
+8) **Block averaging** for each participant and condition
+
+## Data processing
+
+69 participants tested, [27 included]{style="background-color: #000000;color: #ffffffff"}
+
+39.13% attrition rate:
+
+- Crying/fussiness (*n* = 33)  
+- Missing condition (*n* = 6)
+- Less than 2 valid blocks per condition (*n* = 3)
+
+
+# Results
+
+## Grand average
+
+![](img/block-averages-grand.png)
+
+## Grand average by hemisphere
+
+![](img/hemi-grand-baseline.png)
+
+## Standard blocks ([ST]{style="background-color: #5778a4; color: white"})
+
+![](img/block-averages-st.png)
+
+## Deviant word blocks ([DW]{style="background-color: #e49444; color: white"})
+
+![](img/block-averages-dw.png)
+
+## Deviant syllable blocks ([DS]{style="background-color: #6a9f58; color: white"})
+
+![](img/block-averages-ds.png)
+
+## HbO: [ST]{style="background-color: #5778a4; color: white"} vs. [DW]{style="background-color: #e49444; color: white"} vs. [DS]{style="background-color: #6a9f58; color: white"}
+
+![](img/block-averages-hbo.png)
+
+## HbO: [ST]{style="background-color: #5778a4; color: white"} vs. [DW]{style="background-color: #e49444; color: white"}
+
+![](img/block-averages-hbo-dw-st.png)
+
+## HbO: [DW]{style="background-color: #e49444; color: white"} vs. [DS]{style="background-color: #6a9f58; color: white"}
+
+![](img/block-averages-hbo-ds-dw.png)
+
+## HbO: [ST]{style="background-color: #5778a4; color: white"} vs. [DS]{style="background-color: #6a9f58; color: white"}
+
+![](img/block-averages-hbo-ds-st.png)
+
+
+## HbR: [ST]{style="background-color: #5778a4; color: white"} vs. [DW]{style="background-color: #e49444; color: white"} vs. [DS]{style="background-color: #6a9f58; color: white"}
+
+![](img/block-averages-hbr.png)
+
+## HbR: [ST]{style="background-color: #5778a4; color: white"} vs. [DW]{style="background-color: #e49444; color: white"}
+
+![](img/block-averages-hbr-dw-st.png)
+
+## HbR: [DW]{style="background-color: #e49444; color: white"} vs. [DS]{style="background-color: #6a9f58; color: white"}
+
+![](img/block-averages-hbr-ds-dw.png)
+
+## HbR: [ST]{style="background-color: #5778a4; color: white"} vs. [DS]{style="background-color: #6a9f58; color: white"}
+
+![](img/block-averages-hbr-ds-st.png)
+
+# Discussion
+
+## Good news
+
+* Good haemodynamic response function
+* Recruitment-collection-analysis pipeline up and running
+
+## Bad news
+
+* Inconclusive results
+* Too much noise: motion arctifacts, participants probably too awake
+* Experimental design possibly too ambitious
+
+## Next steps
+
+### New experimental design
+
+* First proving discrimination between MOP+ and MOP- words, maybe then proving a preference.
+* Classic block design: two conditions (MOP+ vs. MOP-)
+
+## Next steps
+
+### New stimuli
+
+* Naturally recorded
+* Co-articulation cues ok?
+* Segmentation pause?
+
+## Next steps
+
+### New data collection
+
+* Test participants only in quiet sleep
+* Visual scoring of behavioural signs of quiet sleep^[@grigg2016visual]
+
+---
+
+![](img/neurodevco-thanks.png)
+
+# Appendix
+
+## Task design
+
+![](img/design.jpg)
+
+
+## NIRS setup
+
+* NIRSport2 (NIRx), CW 760 nm & 850 nm
+* Sampling frequency 20.345 Hz (~0.05 s samples)
+* NIRScap: 8 channels LH, 8 channels RH
+
+## References

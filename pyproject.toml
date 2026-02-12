@@ -1,0 +1,23 @@
+[project]
+name = "sap-2026-mop-newborns"
+version = "0.1.0"
+description = "Presentation for SAP seminar on the 2026/02/17 at the Center for Brain and Cognition, Universitat Pompeu Fabra."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cedalion",
+    "mne>=1.9.0",
+    "quarto>=0.1.0",
+    "xarray==2025.6",
+    "ipython>=9.10.0",
+    "jupyter>=1.1.1",
+    "polars>=1.36.1",
+    "pybids>=0.19.0",
+    "rich>=14.2.0",
+    "ruff>=0.14.7",
+    "snirf2bids>=0.8.8",
+]
+
+[tool.uv.sources]
+cedalion = { git = "https://github.com/ibs-lab/cedalion", rev = "dev" }
+
