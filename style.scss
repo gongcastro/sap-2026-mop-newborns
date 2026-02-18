@@ -152,22 +152,6 @@ $h3-font-size: 30px;
   text-align: center;
 }
 
-.citation {
-  line-height: 25%;
-  color: grey;
-  text-align: right;
-
-  a {
-    color: grey;
-    text-align: right;
-  }
-}
-
-.aside {
-  color: $lightgrey;
-  font-size: 15px;
-  text-align: right;
-}
 
 .callout {
   background-color: $lightgrey;
@@ -241,18 +225,20 @@ strong {
 }
 
 h1 {
-  font-size: 80 !important;
+  font-size: 80px !important;
 }
 
 h2 {
-  font-size: 45px !important;
-}
-
-h3 {
   font-size: 40px !important;
 }
 
-p,
+h3 {
+  font-size: 35px !important;
+}
+
+
+
+
 li,
 ul,
 td {
@@ -260,14 +246,18 @@ td {
 }
 
 aside,
-.citation {
-  font-size: 30px !important;
-}
-
-
-aside p,
-.aside-footnotes {
+.citation,
+.aside>p,
+.aside-footnotes,
+.aside-footnotes>p,
+.aside-footnotes>li,
+.aside-footnotes>ol,
+.aside-footnotes>a {
   color: $body-color;
+  font-size: 15px !important;
+  line-height: 25%;
+  color: grey;
+  margin-top: 1em !important;
 }
 
 .blockquote {

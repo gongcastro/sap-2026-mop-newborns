@@ -14,3 +14,6 @@ bibliography: bibliography.bib
 echo: false
 warning: false
 error: false
+
+footnotes-hover: false
+citation-location: margin
