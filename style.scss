@@ -1,0 +1,327 @@
+/* -- scss:import --*/
+
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed';
+@import 'https://fonts.googleapis.com/css?family=Fira+Code';
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed';
+
+/*-- scss:defaults --*/
+
+// define variables for later
+$grey: grey !default;
+$black: black !default;
+$lightgrey: #e3e1e1 !default;
+
+$sjd-orange: #ea6212 !default;
+$sjd-red: #ff001e !default;
+$sjd-purple: #781478 !default;
+
+$font-family-serif: 'Roboto Condensed';
+$font-family-sans-serif: 'Roboto Condensed';
+$font-family-monospace: 'Fira Code';
+
+// font-sizes
+$presentation-font-size-root: 35px;
+
+// font colours
+$body-color: $black !default;
+$link-color: $grey !default;
+$presentation-heading-color: $black !default;
+
+// font-styles
+$presentation-heading-font-weight: 550;
+
+// code blocks
+$code-block-bg: $lightgrey;
+$code-block-border-color: $lightgrey;
+
+// layout;
+$presentation-heading-line-height: 1;
+$h1-margin-bottom: 20%;
+$h1-font-size: 30px;
+$h2-font-size: 30px;
+$h3-font-size: 30px;
+
+/*-- scss:rules --*/
+
+#title-slide {
+
+  .title,
+  .subtitle {
+    opacity: 0.80;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-weight: 500;
+    font-family: $font-family-sans-serif;
+  }
+
+  .title,
+  .h1 {
+    font-size: 25px !important;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-weight: bolder;
+    vertical-align: center;
+  }
+
+  .subtitle {
+    font-size: 25px !important;
+    margin-bottom: 5%;
+    font-weight: bold;
+    color: black;
+  }
+
+  .quarto-title-author {
+    margin-right: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: black;
+  }
+
+  .quarto-title-author-name {
+    font-size: 30px;
+    font-family: $font-family-sans-serif;
+  }
+
+  .quarto-title-affiliation {
+    font-size: 20px;
+    color: black;
+  }
+
+  .quarto-title-author-orcid {
+    img {
+      margin-bottom: 4px;
+    }
+  }
+
+  .author-twitter {
+    img {
+      margin-bottom: 4px;
+    }
+  }
+
+  .affiliation-logo {
+    img {
+      height: 30%;
+      position: absolute;
+      left: 0;
+      margin-bottom: 4%;
+    }
+  }
+
+  .media-icon {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    float: right;
+
+    img {
+      display: inline-block;
+      position: relative;
+      bottom: 100%;
+      height: 25px !important;
+      margin-top: 10%;
+      vertical-align: left;
+    }
+
+    p {
+      display: inline-block;
+      position: relative;
+      bottom: 0px;
+      font-family: $font-family-monospace;
+      font-size: 18px;
+      margin-top: 1%;
+      color: black
+    }
+  }
+
+  .conference {
+    p {
+      font-size: 15px;
+      bottom: 0;
+      font-family: $font-family-monospace;
+      color: black;
+      margin-top: 2em;
+    }
+  }
+
+}
+
+.center {
+  text-align: center;
+}
+
+
+.callout {
+  background-color: $lightgrey;
+}
+
+.date {
+  font-size: 40px;
+}
+
+b,
+strong {
+  font-weight: 900;
+}
+
+.reveal .slide {
+
+  blockquote {
+    border-left: 3px solid $text-muted;
+    padding-left: 0.5em;
+  }
+
+  a {
+    color: grey
+  }
+
+  b,
+  strong {
+    font-weight: 900;
+  }
+
+  caption {
+    font-size: 20px;
+    line-height: 25%;
+    color: grey;
+    text-align: right;
+
+    p {
+      line-height: 25%;
+      color: grey;
+      text-align: right;
+    }
+  }
+
+  h1 {
+    font-size: $h1-font-size;
+  }
+
+  h2 {
+    font-size: $h2-font-size;
+    font-weight: bolder;
+  }
+
+  h3 {
+    font-size: $h3-font-size;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 5%;
+    font-weight: bolder;
+    font-family: $font-family-serif;
+  }
+
+  figcaption {
+    margin-top: -3%;
+    text-align: right;
+    margin-right: 5%;
+    color: grey;
+  }
+}
+
+h1 {
+  font-size: 80px !important;
+}
+
+h2 {
+  font-size: 40px !important;
+}
+
+h3 {
+  font-size: 35px !important;
+}
+
+
+
+
+li,
+ul,
+td {
+  font-size: 30px !important;
+}
+
+aside,
+.citation,
+.aside>p,
+.aside-footnotes,
+.aside-footnotes>p,
+.aside-footnotes>li,
+.aside-footnotes>ol,
+.aside-footnotes>a {
+  color: $body-color;
+  font-size: 15px !important;
+  line-height: 25%;
+  color: grey;
+  margin-top: 1em !important;
+}
+
+.blockquote {
+  font-size: 21px;
+  color: black;
+}
+
+.reveal .slide .box {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  background: lightgrey;
+  color: black
+}
+
+.highlight {
+  background-color: black;
+  color: black;
+  font-size: 55px;
+  opacity: 1;
+}
+
+.orange {
+  p {
+    background-color: $sjd-orange;
+  }
+}
+
+.thanks {
+  p {
+    font-size: 150px;
+    font-weight: bold;
+    font-family: $font-family-serif;
+  }
+}
+
+#title-slide {
+
+  .title,
+  .subtitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-family: $font-family-sans-serif;
+  }
+
+  .title,
+  .h1 {
+    font-size: 50px !important;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-weight: bolder;
+    vertical-align: center;
+  }
+
+  .h2 {
+    font-size: 48px !important;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    vertical-align: center;
+  }
+}
