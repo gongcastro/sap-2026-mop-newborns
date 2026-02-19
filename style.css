@@ -202,7 +202,7 @@ aside,
 .aside-footnotes>li,
 .aside-footnotes>ol,
 .aside-footnotes>a {
-  color: 'black';
+  color: black;
   font-size: 15px !important;
   line-height: 25%;
   color: grey;
@@ -254,7 +254,7 @@ aside,
 
   .title,
   .h1 {
-    font-size: 25px !important;
+    font-size: 40px !important;
     margin-bottom: 2%;
     margin-top: 2%;
     font-weight: bolder;
@@ -262,7 +262,7 @@ aside,
   }
 
   .h2 {
-    font-size: 20px !important;
+    font-size: 35px !important;
     margin-bottom: 2%;
     margin-top: 2%;
     vertical-align: center;
